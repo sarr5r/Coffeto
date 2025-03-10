@@ -1,0 +1,1136 @@
+:root {
+    --primary-color: #6b4423;
+    --secondary-color: #a67c52;
+    --light-color: #f5f1e6;
+    --dark-color: #3c2415;
+    --accent-color: #d4a76a;
+    --text-color: #333;
+    --white: #ffffff;
+    --gold: #d4af37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header h1:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 0.5rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+/* Section Styles */
+section {
+    padding: 3rem 0;
+    transition: background-color 0.5s ease;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+section h2:hover {
+    transform: translateY(-3px);
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 0.5rem auto;
+    transition: width 0.3s ease;
+}
+
+section h2:hover::after {
+    width: 100px;
+}
+
+/* Intro Section */
+.intro {
+    background-color: var(--white);
+}
+
+.intro .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.intro-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.coffee-icon {
+    width: 200px;
+    height: 200px;
+    fill: var(--primary-color);
+}
+
+/* Coffee Basics Section */
+.coffee-basics {
+    background-color: var(--light-color);
+}
+
+.subsection {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.subsection:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-map {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.map-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.bean-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.bean-type {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.bean-svg {
+    width: 50px;
+    height: 100px;
+    margin: 0 auto 1rem;
+}
+
+.history-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Coffee Origins Map Styles */
+.coffee-map-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.coffee-map-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.map-interactive {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f9f5ed;
+}
+
+.coffee-region-marker {
+    cursor: pointer;
+    transition: transform 0.3s ease, r 0.2s ease, fill 0.3s ease;
+}
+
+.coffee-region-marker:hover {
+    transform: translateY(-2px);
+}
+
+.region-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--light-color);
+    border-radius: 4px;
+    border-left: 4px solid var(--primary-color);
+    transition: background-color 0.3s ease;
+    min-height: 100px;
+}
+
+.region-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.region-info p {
+    line-height: 1.5;
+}
+
+.coffee-belt-label {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--dark-color);
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.region-group {
+    transition: transform 0.3s ease;
+}
+
+.region-group:hover {
+    transform: scale(1.05);
+}
+
+/* Brewing Guide Section */
+.brewing-guide {
+    background-color: var(--white);
+}
+
+.methods-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.method {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.method-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.method.active .method-details {
+    max-height: 300px;
+}
+
+.method::after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.method.active::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.method-svg {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+}
+
+.tips {
+    text-align: left;
+    list-style-type: circle;
+}
+
+.grind-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.grind {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.grind:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.grind-visual {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    transition: transform 0.5s ease;
+}
+
+.grind:hover .grind-visual {
+    transform: rotate(360deg);
+}
+
+.fine-grind {
+    background-color: var(--primary-color);
+    background-image: radial-gradient(var(--secondary-color) 1px, transparent 1px);
+    background-size: 3px 3px;
+}
+
+.medium-grind {
+    background-color: var(--primary-color);
+    background-image: radial-gradient(var(--secondary-color) 2px, transparent 2px);
+    background-size: 5px 5px;
+}
+
+.coarse-grind {
+    background-color: var(--primary-color);
+    background-image: radial-gradient(var(--secondary-color) 3px, transparent 3px);
+    background-size: 8px 8px;
+}
+
+/* Roast Types Section */
+.roast-types {
+    background-color: var(--light-color);
+}
+
+.roast-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.roast {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.roast:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.roast-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    opacity: 0;
+}
+
+.roast.active .roast-info {
+    max-height: 300px;
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.3s ease 0.2s;
+}
+
+.roast-visual {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease;
+}
+
+.roast:hover .roast-visual {
+    transform: scale(1.1);
+}
+
+.roast::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.roast.active::after {
+    transform: rotate(180deg);
+}
+
+.light-roast {
+    background-color: #c8a27c;
+}
+
+.medium-roast {
+    background-color: #8d604c;
+}
+
+.dark-roast {
+    background-color: #3d2314;
+}
+
+/* My Products Section */
+.my-products {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.my-products h2 {
+    color: var(--white);
+}
+
+.products-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.product-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.product-visual {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.coffee-bag {
+    width: 200px;
+}
+
+.bag-svg {
+    width: 100%;
+    height: auto;
+}
+
+.my-products ul {
+    margin-bottom: 1.5rem;
+}
+
+.cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 0.5rem;
+}
+
+/* Cultivation Section */
+.cultivation {
+    background-color: var(--white);
+}
+
+.cultivation-process {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 180px;
+    max-width: 220px;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+}
+
+.step-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.processing-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.method-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.method-card h4 {
+    color: var(--dark-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Tasting Notes Section */
+.tasting-notes {
+    background-color: var(--light-color);
+}
+
+.tasting-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tasting-step {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.flavor-wheel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.flavor-wheel {
+    width: 350px;
+    height: 350px;
+    position: relative;
+}
+
+.flavor-description {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.our-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.flavor-tag {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.flavor-tag:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.tasting-cta {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    color: var(--primary-color);
+}
+
+/* Glossary Section */
+.glossary {
+    background-color: var(--white);
+    padding-bottom: 4rem;
+}
+
+.glossary-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.glossary-item {
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.glossary-item:hover {
+    transform: translateY(-5px);
+}
+
+.glossary-item h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Coffee Quiz Game at the end */
+.coffee-quiz-container {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.coffee-quiz-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--primary-color), var(--gold), var(--primary-color));
+    z-index: 1;
+}
+
+.quiz-title {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.quiz-question {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.quiz-question:hover {
+    transform: translateX(5px);
+}
+
+.quiz-question h4 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.quiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.quiz-option {
+    background-color: var(--white);
+    border: 2px solid var(--secondary-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-grow: 1;
+    text-align: center;
+    min-width: 150px;
+}
+
+.quiz-option:hover {
+    background-color: var(--light-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-option.selected {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.quiz-option.correct {
+    background-color: #2ecc71;
+    color: var(--white);
+    border-color: #27ae60;
+}
+
+.quiz-option.incorrect {
+    background-color: #e74c3c;
+    color: var(--white);
+    border-color: #c0392b;
+}
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.quiz-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.quiz-button:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.quiz-result {
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.quiz-result.show {
+    max-height: 300px;
+    opacity: 1;
+    background-color: #f0e6d8;
+    border: 2px solid var(--gold);
+}
+
+.result-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.score-badge {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.coffee-badge-container {
+    margin: 1.5rem 0;
+}
+
+.coffee-badge {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.badge-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.badge-animation {
+    animation: badge-shine 2s infinite alternate;
+}
+
+@keyframes badge-shine {
+    from {
+        filter: drop-shadow(0 0 2px var(--gold));
+    }
+    to {
+        filter: drop-shadow(0 0 10px var(--gold));
+    }
+}
+
+.quiz-progress {
+    height: 6px;
+    background-color: var(--light-color);
+    border-radius: 3px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--gold));
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+/* Coffeto Brand Enhancement */
+.coffeto-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.coffeto-brand:hover {
+    transform: scale(1.05);
+}
+
+.coffeto-brand::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--gold);
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.coffeto-brand:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.premium-badge {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-color);
+    font-size: 0.7em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    vertical-align: text-top;
+    margin-left: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Remove bean sorter from coffee basics */
+.bean-sorter-game {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        text-align: center;
+    }
+    
+    .intro .container,
+    .products-content {
+        flex-direction: column;
+    }
+    
+    .intro-image,
+    .product-visual {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bean-comparison,
+    .methods-grid,
+    .grind-comparison,
+    .roast-comparison {
+        flex-direction: column;
+    }
+    
+    .bean-type,
+    .method,
+    .grind,
+    .roast {
+        margin-bottom: 1.5rem;
+    }
+    
+    .flavor-wheel {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .cultivation-process,
+    .processing-methods,
+    .tasting-steps {
+        flex-direction: column;
+    }
+    
+    .process-step,
+    .method-card,
+    .tasting-step {
+        max-width: 100%;
+    }
+}
+
+/* Social Media Icons */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-left: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    background-color: var(--white);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--dark-color);
+}
